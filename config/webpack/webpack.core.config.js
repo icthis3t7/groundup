@@ -9,12 +9,23 @@ var path = require('path');
 // literally the thing
 module.exports = {
   entry: {
-		'app': path.resolve('./src/app/app.js')
+		'app': path.resolve('./src/entry.js')
 
 	},
 
+	resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve('./src')
+
+    }
+
+  },
+
   module: {
-    rules: [{
+    rules: [
+			{
         test: /\.js$/,
         exclude: /(node_modules)/,
 
@@ -23,7 +34,13 @@ module.exports = {
 
         }
 
-      }
+      },
+
+			{
+        test: /\.vue$/,
+        loader: 'vue-loader'
+
+      },
 
     ]
 
