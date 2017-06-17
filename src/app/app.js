@@ -2,10 +2,12 @@ var materials = [
   'Hydrogen',
   'Helium',
   'Lithium',
-  'Beryllium'
+  'Beryllium',
+	'hsdhkfds',
+	'sdfsdfsdf'
 
 ];
-
+//hi
 [8,6,7,9]
 
 let materialsLength2 = materials.map((material) => {
@@ -13,4 +15,4 @@ let materialsLength2 = materials.map((material) => {
 
 });
 
-document.body.innerText = document.body.innerText + " result: " + materialsLength2;
+document.body.innerText = document.body.innerText + " result: " + materialsLength2 + 'suuuuuuuuuuuup';

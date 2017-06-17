@@ -7,13 +7,21 @@
     "babel-core": "^6.25.0",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.2",
+    "concurrently": "^3.4.0",
     "html-webpack-plugin": "^2.28.0",
     "path": "^0.12.7",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "express": "^4.15.3",
     "vue": "^2.3.4"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run express-dev\" \"npm run webpack-dev-watch\" \"npm run webpack-dev-server-hot\"",
+    "webpack-dev-watch": "webpack --config ./config/webpack/webpack.dev.config.js --colors --watch",
+    "webpack-dev-server-hot": "webpack-dev-server --config ./config/webpack/webpack.dev.config.js --hot --colors --inline",
+    "express-dev": "node server/server.js"
   }
 }
