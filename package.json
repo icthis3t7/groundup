@@ -22,6 +22,8 @@
     "dev": "concurrently --kill-others \"npm run express-dev\" \"npm run webpack-dev-watch\" \"npm run webpack-dev-server-hot\"",
     "webpack-dev-watch": "webpack --config ./config/webpack/webpack.dev.config.js --colors --watch",
     "webpack-dev-server-hot": "webpack-dev-server --config ./config/webpack/webpack.dev.config.js --hot --colors --inline",
-    "express-dev": "node server/server.js"
+    "express-dev": "node server/server.js",
+		"prod": "concurrently --kill-others \"npm run webpack-prod-build\"",
+		"webpack-prod-build": "webpack --config ./config/webpack/webpack.prod.config.js --colors"
   }
 }
