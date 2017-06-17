@@ -13,4 +13,4 @@ let materialsLength2 = materials.map((material) => {
 
 });
 
-console.log(materialsLength2)
+document.body.innerText = document.body.innerText + " result: " + materialsLength2;
