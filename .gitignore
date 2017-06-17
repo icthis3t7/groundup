@@ -61,4 +61,5 @@ typings/
 .DS_Store
 
 # app specific
+/dist
 /src/_keys
