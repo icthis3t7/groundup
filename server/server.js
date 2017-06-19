@@ -2,6 +2,9 @@
 var path = require('path');
 var express = require('express');
 
+// dev dependencies
+var routes = require('./routes')
+
 // server config
 const PORT = process.env.PORT || 3000;
 const serverDir = path.resolve('./dist');
@@ -12,6 +15,12 @@ var server = express();
 
 // all static assets found here
 server.use(express.static(path.resolve('./dist')));
+
+// api
+server.get('/api/test', function (req, res) {
+	res.status(200).json({result: 'you did it'});
+
+});
 
 // all other routes sent to index.html
 server.get('*', function(req, res) {
